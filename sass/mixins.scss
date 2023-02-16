@@ -1,0 +1,28 @@
+@mixin block-space {
+    padding: $space-lg $space-md;
+    width: 100%;
+    display: flex;
+}
+
+@mixin mobile-align {
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin box-shadow {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, .15);
+}
+
+@mixin background-clip {
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -ms-background-clip: text;
+    -o-background-clip: text;
+}
+
+@mixin text-fill {
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+    -o-text-fill-color: transparent;
+}

@@ -1,0 +1,364 @@
+
+@import "variables.scss";
+@import "functions.scss";
+@import "mixins.scss";
+@import "animations.scss";
+@import "resto.scss";
+
+
+// hello code
+body, html {
+    font-size: $base-font-size;
+    font-family: $base-font-family;
+    color: $color-base;
+    background-color: $white;
+    font-weight: 400;
+}
+.shrikhand {
+    font-family: 'Shrikhand', cursive;
+    font-size: ($base-font-size * 1.75);
+}
+
+// container
+header, nav, article, section, footer {display: flex;}
+main {
+    h2 {
+        margin: $space-md $space-none;
+    }
+}
+
+// titles
+h1 {font-size: ($base-font-size * 1.5);}
+h2 {font-size: ($base-font-size * 1.4);}
+h3 {font-size: ($base-font-size * 1.2);}
+h4 {font-size: ($base-font-size * 1);}
+h5 {font-size: ($base-font-size * .8);}
+h6 {font-size: ($base-font-size * .6);}
+h1, h2, h3, h4, h5, h6 {font-weight: 500;}
+
+// buttons
+.btn {
+    color: $white;
+    text-decoration: none;
+    background-image: linear-gradient(345deg, $primary, $secondary);
+    padding: $space-sm $space-md;
+    border-radius: 2rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, .35);
+    transition: ease-in 300ms;
+    font-size: $base-font-size;
+
+    &:hover {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, .35);
+        background-image: linear-gradient(345deg, rgba($primary, .8), rgba($secondary, .8));
+    }
+
+    &:focus, &:active {
+        background-image: none;
+        background-color: $white;
+        color: $primary;
+    }
+    &.btn-lg {
+        padding: $space-base $space-lg;
+        font-size: ($base-font-size * 1.25);
+    }
+}
+
+
+.like {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    bottom: ($space-base * 2);
+    right: $space-md;
+    font-size: 1.375rem;
+    
+    &:before {
+        font: var(--fa-font-regular); 
+        content: "\f004";  
+        color: $color-base;              
+    }
+
+    &:hover {
+        cursor: pointer;
+        background: linear-gradient(345deg, $primary, $secondary);
+
+        @include background-clip;
+        @include text-fill;
+        animation: heartbeat 1.5s ease-in-out infinite both;
+    }
+
+    &:focus:before {
+        font: var(--fa-font-solid); 
+        content: "\f004";
+        background: linear-gradient(345deg, $primary, $secondary);
+        animation: slide-top 1000ms ease-in;
+
+        @include background-clip;
+        @include text-fill;
+    }
+}
+
+// card 
+.card {
+    @include box-shadow;
+    background-color: $white;
+    flex-direction: column;
+    border-radius: 20px;
+    position: relative;
+
+    a {
+        text-decoration: none;
+        color: $color-base;
+    }
+
+    .card-thumbnail {
+        position: relative;
+        .badge {
+            color: $green;
+            font-size: $base-font-size;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, .15);
+            border-radius: 2px;
+            padding: $space-xs $space-sm;
+            position: absolute;
+            top: $space-sm;
+            right: $space-sm;
+
+            &.badge-success {
+                background-color: $light-green;
+            }
+        }
+        img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+            border-radius: 20px 20px 0 0;
+        }
+    }
+    .card-content {
+        padding: $space-base;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+
+        .card-title {
+            flex-basis: 86%;
+            justify-content: flex-start;
+
+            h3 {
+                margin-bottom: ($space-sm / 2);
+            }
+            p {
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+// header
+header {
+    flex-basis: 100%;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-basis: 100%;
+        background-color: $white;
+        box-shadow: 0 0 10px rgba($color: #000000, $alpha: .2);
+        padding: $space-base $space-none;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            margin-left: -($space-base * 2);
+
+            &.nomenu {
+                margin-left: 0;
+            }
+
+            img {
+                height: 34px;
+                display: flex;
+            }
+        }
+        
+        .back {
+            display: flex;
+            padding-left: $space-base;
+            color: $color-base;
+            text-decoration: none;
+            i {
+                font-size: $base-font-size;
+            }
+        }
+    }
+}
+// location
+.location {
+    padding: $space-base $space-none;
+    flex: 1;
+    justify-content: center;
+    display: flex;
+    background-color: $grey;
+    color: $dark-grey;
+
+    i {margin-right: $space-sm;}
+}
+
+// hero
+.hero {
+    @include block-space;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: $light-grey;
+    
+    h1 {
+        text-align: center;
+    }
+    .lead {
+        font-weight: 300;
+        font-size: $base-font-size;
+        color: lighten($color-base, 40%);
+        margin: $space-sm $space-none $space-md;
+    }
+}
+
+// steps
+.steps {
+    @include block-space;
+    @include mobile-align;
+    margin: 0 auto;
+
+    h2 {
+        width: 100%;
+    }
+
+    .steps-card {
+        @include box-shadow;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: $light-grey;
+        border-radius: 1.25rem;
+        margin: $space-sm $space-none;
+        padding: $space-md $space-base;
+        position: relative;
+        font-weight: 400;
+
+        .bubble {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            background-color: $primary;
+            border-radius: 50%;
+            overflow: hidden;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            color: $white;
+            left: -$space-sm;
+            font-size: ($base-font-size * .875);
+        }
+
+        i {
+            margin: $space-none $space-md $space-none $space-base;
+            color: $grey-50;
+        }
+
+        &:last-child {
+            background-color: lighten($primary, 35%); 
+            i {
+                color: $primary;
+            }
+        }
+    }
+}
+
+// restaurants
+.restaurants {
+    @include block-space;
+    @include mobile-align;
+    
+    background-color: $light-grey;
+    padding-bottom: $space-xl;
+
+    .block-cards {
+        display: flex;
+        flex-direction: column;
+        gap: $space-md;
+    }
+    
+}
+
+// footer 
+footer {
+    @include block-space;
+    @include mobile-align;
+    
+    background-color: $dark-grey;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-weight: 300;
+
+    .logo {
+        height: 27px;
+        fill: $white;
+        margin-bottom: $space-md;
+        filter: invert(1);
+    }
+
+    li {
+        line-height: 1.7;
+        &:nth-child(-n + 3) {
+            font-weight: 400;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $white;
+    }
+
+    i {
+        margin-right: $space-sm;
+    }
+}
+
+// loader
+.loader {
+    display: flex;
+    z-index: 1050;
+    background-color: $white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    animation: 
+        fadeOut ease-in 3s forwards, 
+        exit 0.5s cubic-bezier(1.000, 0.000, 0.000, 1.000) 3s both,
+        color-change 3s linear infinite alternate both;
+
+    .svg-block {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        padding: $space-none $space-lg;
+
+        img {
+            max-width: 200px;
+            width: 100%;
+            filter: invert(1);
+            animation: jello-horizontal 0.9s infinite both;
+        }
+    }
+}
+
+// breakpoints
+@import "queries.scss";

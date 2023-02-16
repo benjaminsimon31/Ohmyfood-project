@@ -1,0 +1,112 @@
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+
+@keyframes slide-top {
+    0% {
+        opacity: 0;
+      transform: translateY(50%);
+    }
+    100% {
+        opacity: 1;
+      transform: translateY(0);
+    }
+ }
+
+
+ @keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+
+
+
+$animation-delay: 200ms;
+@for $i from 1 through 9 {
+    .restaurant-details .menu .menu-content .menu-content-options .card:nth-child(n + #{$i}) {
+    animation-delay: ($animation-delay + ($i * 250ms));
+  }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes exit {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-1000px);
+      opacity: 0;
+    }
+}
+ @keyframes color-change {
+    0% {
+      background: $primary;
+    }
+    50% {
+      background: $secondary;
+    }
+    100% {
+      background: $light-green;
+    }
+  }
+  
+
+@keyframes jello-horizontal {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+    30% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+      transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+}

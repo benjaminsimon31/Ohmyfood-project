@@ -1,0 +1,160 @@
+.restaurant-details {
+    padding: $space-none;
+
+    .restaurant-details-thumbnail {
+        position: relative;
+        img {
+            height: 275px;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+    .menu {
+        background-color: $grey;
+        padding: $space-md;
+        border-radius: 40px 40px 0px 0px;
+        margin-top: -($space-base * 3);
+        position: relative;
+        flex-direction: column;
+
+        .menu-title {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-basis: 100%;
+
+            h1 {
+                flex-basis: 86%;
+                justify-content: flex-start;
+            }
+            .like {
+                position: inherit;
+            }
+        }
+
+        .menu-content {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 100%;
+            .menu-content-title {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                animation: slide-top 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                animation-delay: 600ms;
+
+                h2 {
+                    font-size: $base-font-size;
+                    font-weight: 300;
+                    text-transform: uppercase;
+                    margin-bottom: $space-xs;
+                }
+                .menu-content-title-border {
+                    width: 40px;
+                    height: 3px;
+                    background-color: $light-green;
+                }
+                
+            } 
+            
+            .menu-content-options {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+
+                .card {
+                    flex: 1;
+                    display: flex;
+                    border: none;
+                    padding: $space-base;
+                    margin-bottom: $space-base;
+                    font-family: $base-font-family;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    border-radius: 15px;
+                    overflow: hidden;
+                    opacity: 0;
+                   
+                    animation: slide-top 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+                    &:first-child {
+                        margin-top: $space-base;
+                    }
+
+                    .menu-content-options-details {
+                        width: 300px;
+                        text-align: left;
+                        overflow: hidden;
+
+                        h3 {
+                            font-weight: 500;
+                            margin-bottom: $space-xs;
+                            white-space: nowrap; 
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                        p {
+                            font-size: $base-font-size;
+                            font-weight: 300;
+                            white-space: nowrap; 
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+
+                    .menu-content-options-price {
+                        display: flex;
+                        align-self: flex-end;
+                        justify-content: flex-end;
+                        font-size: ($base-font-size * 1.125);
+                        font-weight: 500;
+                        padding: $space-none $space-base;
+                        transition: 300ms linear;
+                        flex: 1;
+                    }
+
+                    &:hover, &:focus {
+                        cursor: pointer;
+                        .menu-content-options-price {
+                            margin-right: 60px;
+                        }
+                        .check {
+                            right: 0;
+                            i {
+                                animation: rotation 500ms linear;
+                            }
+                        }
+                    }
+
+                    .check {
+                        background-color: $light-green;
+                        width: 60px;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        right: -60px;
+                        display: flex;
+                        flex-basis: 100%;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 0 15px 15px 0;
+                        overflow-x: hidden;
+                        transition: linear 300ms;
+
+                        i {
+                            color: $white;
+                            font-size: ($base-font-size * 1.725);
+                        }
+                    }
+                }
+            }
+        }
+
+        .menu-action {
+            display: flex;
+            margin: $space-md $space-none;
+            flex-basis: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+    } }

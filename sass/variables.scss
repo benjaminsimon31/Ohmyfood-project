@@ -1,0 +1,32 @@
+
+$base-font-size: 16px;
+$base-font-family: 'Roboto', sans-serif;
+
+
+$primary: rgba(147, 86, 220, 1);
+$secondary: rgba(255, 121, 218, 1);
+
+$color-base: rgba(0, 0, 0, 1);
+$white: rgb(255, 255, 255);;
+$light-grey: rgba(247, 247, 247, 1);
+$grey: rgba(234, 234, 234, 1);
+$grey-50: rgba(126, 126, 126, 1);
+$dark-grey: rgba(53, 53, 53, 1);
+$light-green: rgba(153, 226, 208, 1);
+$green: rgba(0, 135, 102, 1);
+$light-blue: rgba(137, 200, 250, 1);
+$blue: rgba(0, 58, 104, 1);
+
+
+$space-none: 0;
+$space-xs: ($base-font-size * .4);
+$space-sm: ($base-font-size * .8);
+$space-base: $base-font-size;
+$space-md: ($base-font-size * 1.6);
+$space-lg: ($base-font-size * 2.4);
+$space-xl: ($base-font-size * 3.2);
+
+// screen sizes
+$desktop: 1200px;
+$tablet: 992px;
+$mobile: 768px;
