@@ -46,7 +46,7 @@
 
 
 
-$animation-delay: 200ms;
+$animation-delay: 150ms;
 @for $i from 1 through 9 {
     .restaurant-details .menu .menu-content .menu-content-options .card:nth-child(n + #{$i}) {
     animation-delay: ($animation-delay + ($i * 250ms));
