@@ -340,9 +340,9 @@ footer {
     width: 100vw;
     height: 100vh;
     animation: 
-        fadeOut ease-in 3s forwards, 
-        exit 0.5s cubic-bezier(1.000, 0.000, 0.000, 1.000) 3s both,
-        color-change 3s linear infinite alternate both;
+        fadeOut ease-in 5s forwards, 
+        exit 0.9s cubic-bezier(1.000, 0.000, 0.000, 1.000) 3s both,
+        color-change 5s linear infinite alternate both;
 
     .svg-block {
         display: flex;
@@ -355,10 +355,10 @@ footer {
             max-width: 200px;
             width: 100%;
             filter: invert(1);
-            animation: jello-horizontal 0.9s infinite both;
+            animation: jello-horizontal 0.5s infinite both;
         }
     }
 }
 
-// breakpoints
+
 @import "queries.scss";
