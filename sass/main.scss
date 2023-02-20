@@ -151,6 +151,7 @@ h1, h2, h3, h4, h5, h6 {font-weight: 500;}
             p {
                 font-weight: 300;
             }
+           
         }
     }
 }
@@ -249,6 +250,11 @@ header {
         padding: $space-md $space-base;
         position: relative;
         font-weight: 400;
+        &:hover{
+            background-color: rgba($primary, $alpha: 0.1);
+            & > i{
+                color: $primary;
+            } }
 
         .bubble {
             width: 24px;
@@ -270,14 +276,10 @@ header {
             color: $grey-50;
         }
 
-        &:last-child {
-            background-color: lighten($primary, 35%); 
-            i {
-                color: $primary;
-            }
+        
         }
     }
-}
+
 
 // restaurants
 .restaurants {
@@ -340,9 +342,9 @@ footer {
     width: 100vw;
     height: 100vh;
     animation: 
-        fadeOut ease-in 0.5s forwards, 
-        exit 0.1s cubic-bezier(1.000, 0.000, 0.000, 1.000) 1s both,
-        color-change 1s linear infinite alternate both;
+        fadeOut ease-in 3s forwards, 
+        exit 0.5s cubic-bezier(1.000, 0.000, 0.000, 1.000) 3s both,
+        color-change 3s linear infinite alternate both;
 
     .svg-block {
         display: flex;
@@ -355,10 +357,9 @@ footer {
             max-width: 200px;
             width: 100%;
             filter: invert(1);
-            animation: jello-horizontal 0.1s infinite both;
+            animation: jello-horizontal 0.9s infinite both;
         }
     }
 }
-
 
 @import "queries.scss";

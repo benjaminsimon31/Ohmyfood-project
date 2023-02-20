@@ -1,5 +1,4 @@
 @media screen and (min-width: $tablet) {
-    // index
     .hero {
         h1 {
             font-size: ($base-font-size * 2.5);
@@ -21,12 +20,10 @@
         }
     }
     .restaurants {
-        padding: $space-base $space-none $space-lg $space-none;
-        overflow: hidden;
+        padding: $space-base $space-none;
+        gap: 0;
 
         .restaurants-block {
-            display: flex;
-            flex-direction: column;
             max-width: $desktop;
             margin: 0 auto;
 
@@ -34,25 +31,21 @@
                 width: 100%;
                 flex: 1;
                 padding-left: $space-base;
-                max-width: $desktop;
-                margin: ($space-base * 2) auto;
             }
-    
+
             .block-cards {
                 display: flex;
                 flex-direction: row;
                 column-gap: ($space-base * 2);
-                padding: $space-base;
-                align-items: center;
-                justify-content: flex-start;
                 overflow-x: scroll;
-                scroll-snap-type: x mandatory;
-    
+                padding: $space-base;
+
                 .card {
                     min-width: 330px;
+                    overflow-x: scroll;
                 }
-        }    
-    }
+            }
+        }
 
     }
     footer {
@@ -82,44 +75,12 @@
             }
         }
     }
-    // restaurant page
-    .menu {
-        display: flex;
-        max-width: $desktop;
-        margin: -($space-base * 3) auto 0;
-        justify-content: center;
-        flex-direction: unset !important;
-
-        .menu-block {
-            display: flex;
-            justify-content: center;
-            flex: 1;
-            max-width: $tablet;
-            flex-direction: column;
-            
-            .menu-title {
-                justify-content: center;
-
-                .shrikhand {
-                    flex-basis: unset !important;
-                    margin-right: $space-base;
-                }
-            }
-        }
-    }
-    // footer 
-    footer {
-        ul {
-            max-width: $desktop;
-            margin: 0 auto;
-        }
-    }
 }
 // desktop
 @media screen and (min-width: $desktop) {
     .restaurants {
         .block-cards {
-            overflow-x: scroll;
+            overflow-x: hidden;
         }
     }
 }

@@ -1,6 +1,7 @@
+
+// single restaurant page
 .restaurant-details {
     padding: $space-none;
-
     .restaurant-details-thumbnail {
         position: relative;
         img {
@@ -8,7 +9,7 @@
             object-fit: cover;
             width: 100%;
         }
-    }
+    } }
     .menu {
         background-color: $grey;
         padding: $space-md;
@@ -16,13 +17,11 @@
         margin-top: -($space-base * 3);
         position: relative;
         flex-direction: column;
-
         .menu-title {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             flex-basis: 100%;
-
             h1 {
                 flex-basis: 86%;
                 justify-content: flex-start;
@@ -31,7 +30,6 @@
                 position: inherit;
             }
         }
-
         .menu-content {
             display: flex;
             flex-direction: column;
@@ -42,7 +40,6 @@
                 flex-direction: column;
                 animation: slide-top 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
                 animation-delay: 600ms;
-
                 h2 {
                     font-size: $base-font-size;
                     font-weight: 300;
@@ -61,7 +58,6 @@
                 display: flex;
                 flex: 1;
                 flex-direction: column;
-
                 .card {
                     flex: 1;
                     display: flex;
@@ -74,18 +70,15 @@
                     border-radius: 15px;
                     overflow: hidden;
                     opacity: 0;
-                   
+                    // animation
                     animation: slide-top 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-
                     &:first-child {
                         margin-top: $space-base;
                     }
-
                     .menu-content-options-details {
                         width: 300px;
                         text-align: left;
                         overflow: hidden;
-
                         h3 {
                             font-weight: 500;
                             margin-bottom: $space-xs;
@@ -101,7 +94,6 @@
                             text-overflow: ellipsis;
                         }
                     }
-
                     .menu-content-options-price {
                         display: flex;
                         align-self: flex-end;
@@ -112,7 +104,8 @@
                         transition: 300ms linear;
                         flex: 1;
                     }
-
+                
+                    &:hover {
                     &:hover, &:focus {
                         cursor: pointer;
                         .menu-content-options-price {
@@ -125,7 +118,6 @@
                             }
                         }
                     }
-
                     .check {
                         background-color: $light-green;
                         width: 60px;
@@ -140,7 +132,6 @@
                         border-radius: 0 15px 15px 0;
                         overflow-x: hidden;
                         transition: linear 300ms;
-
                         i {
                             color: $white;
                             font-size: ($base-font-size * 1.725);
@@ -149,7 +140,6 @@
                 }
             }
         }
-
         .menu-action {
             display: flex;
             margin: $space-md $space-none;
@@ -157,4 +147,5 @@
             align-items: center;
             justify-content: center;
         }
-    } }
+    }
+} 
