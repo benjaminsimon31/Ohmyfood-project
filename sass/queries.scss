@@ -1,15 +1,13 @@
-html,body  
-{  
-overflow-x:hidden;  
-} 
 @media screen and (min-width: $tablet) {
+  
     // index
+
     .hero {
         h1 {
-            font-size: ($base-font-size * 2.5);
+            font-size: ($base-font-size * 2,5);
      
         }
-    }
+    } 
     
  .steps {
     flex-direction: row;
@@ -129,7 +127,7 @@ overflow-x:hidden;
 {
     .restaurants {
         .block-cards {
-            overflow-x: scroll;
+            overflow-x: hidden;
         }
     }
 }
