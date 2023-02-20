@@ -1,51 +1,67 @@
+html,body  
+{  
+overflow-x:hidden;  
+} 
 @media screen and (min-width: $tablet) {
+    // index
     .hero {
         h1 {
             font-size: ($base-font-size * 2.5);
+     
         }
     }
-    .steps {
-        flex-direction: row;
-        flex-wrap: wrap;
-        column-gap: ($space-base * 2);
-        justify-content: space-around;
-        max-width: $desktop;
+    
+ .steps {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: ($space-base * 3);
+    justify-content: space-around;
+    max-width: $desktop;
+    
+    h2 {
+        width: 100%;
+    }}
+    
+    .steps-card {
+        flex: 1;
 
-        h2 {
-            width: 100%;
-        }
-
-        .steps-card {
-            flex: 1;
+        &:hover{
+            background-color: rgba($primary, $alpha: 0.1);
+            & > i{
+                color: $primary;
+            }
         }
     }
+
     .restaurants {
-        padding: $space-base $space-none;
-        gap: 0;
+        padding: $space-base $space-none $space-lg $space-none;
+        
 
         .restaurants-block {
-            max-width: $desktop;
+            display: flex;
+            flex-direction: column;          
             margin: 0 auto;
 
             h2 {
                 width: 100%;
                 flex: 1;
                 padding-left: $space-base;
+                max-width: $desktop;
+                margin: ($space-base * 2) auto;
             }
-
+    
             .block-cards {
                 display: flex;
                 flex-direction: row;
-                column-gap: ($space-base * 2);
-                overflow-x: scroll;
-                padding: $space-base;
-
+               
+              
+             
+    
                 .card {
                     min-width: 330px;
-                    overflow-x: scroll;
                 }
-            }
-        }
+        }    
+    } 
 
     }
     footer {
@@ -75,12 +91,45 @@
             }
         }
     }
+    // restaurant page
+    .menu {
+        display: flex;
+        max-width: $desktop;
+        margin: -($space-base * 3) auto 0;
+        justify-content: center;
+        flex-direction: unset !important;
+
+        .menu-block {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+            max-width: $tablet;
+            flex-direction: column;
+            
+            .menu-title {
+                justify-content: center;
+
+                .shrikhand {
+                    flex-basis: unset !important;
+                    margin-right: $space-base;
+                }
+            }
+        }
+    }
+    // footer 
+    footer {
+        ul {
+            max-width: $desktop;
+            margin: 0 auto;
+        }
+    }
 }
 // desktop
-@media screen and (min-width: $desktop) {
+@media screen and (min-width: $desktop) 
+{
     .restaurants {
         .block-cards {
-            overflow-x: hidden;
+            overflow-x: scroll;
         }
     }
 }
